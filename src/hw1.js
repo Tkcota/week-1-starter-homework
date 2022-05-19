@@ -163,14 +163,18 @@ const isSorted = (numbers) => {
 //  return the number if none apply
 // yarn jest -t 'test fizzbuzz'
 const fizzbuzz = (num) => {
-  // for (num = 0; num < 100; num++) {
-  //   if (num % 3 === 0) return ("fizz")
-  //   if (num % 5 === 0) return ("buzz")
-  //   if (num % 10 === 0) return ("buzz")
-  //   if (num % 15 === 0) return ("fizzbuzz");
-  //   else return (4);
+  // for (num = 0; num <= 100; num++) {
+  //   if (num % 3 == 0) { return ("fizz") }
+  //   else if (num % 5 == 0) {
+  //     return ("buzz")
+  //   } else if (num % 3 == 0 && num % 5 == 0) {
+  //     return ("fizzbuzz")
 
+  //   } else {
+  //     return (num)
+  //   }
   // }
+  //}
   //for (num = 0; num <= 100; num++) {
   if (num % 3 == 0 && num % 5 == 0) {
     return ("fizzbuzz")
@@ -183,6 +187,8 @@ const fizzbuzz = (num) => {
   }
 }
 //}
+
+//correct answer above
 
 //TODO
 //};
