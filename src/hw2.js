@@ -11,9 +11,15 @@
  * @param {number} index: the index to add to array
  * @returns {undefined}
  */
- const addItemToArray = (arr, item, index)=>{
-   //TODO
+const addItemToArray = (arr, item, index) => {
+   arr.splice(index, 0, item);
+
+
+
 }
+//TODO
+
+
 
 /**
  * adds item to a new array at given index
@@ -22,8 +28,15 @@
  * @param {number} index: the index to add to array
  * @returns {array} a new array with item added
  */
-const addItemToANewArray=(arr, item, index)=>{
-     //TODO
+const addItemToANewArray = (arr, item, index) => {
+   let newArray = new Array(arr.length);
+   for (let i = 0; i < arr.length; i++) {
+      newArray[i] = arr[i];
+   }
+   newArray.splice(index, 0, item);
+   return newArray;
+
+   //TODO
 }
 
 /**
@@ -33,8 +46,10 @@ const addItemToANewArray=(arr, item, index)=>{
  * @param {number} index: the index to add to array
  * @returns {undefined}
  */
- const replaceItemToArray = (arr, item, index)=>{
-       //TODO
+const replaceItemToArray = (arr, item, index) => {
+   // arr.splice(index, 0, item);
+   arr.splice(index, 1, item);
+   //TODO
 }
 
 /**
@@ -44,13 +59,22 @@ const addItemToANewArray=(arr, item, index)=>{
  * @param {number} index: the index to add to array
  * @returns {array} a new array with item added
  */
-const replaceItemToANewArray=(arr, item, index)=>{
-   //TODO
+const replaceItemToANewArray = (arr, item, index) => {
+   const newarr = [...arr]
+   newarr.splice(index, 1, item);
+   return newarr;
+
+
+
+
+
+
+
 }
 
 module.exports = {
-    addItemToArray,
-    addItemToANewArray,
-    replaceItemToArray,
-    replaceItemToANewArray
-  };
+   addItemToArray,
+   addItemToANewArray,
+   replaceItemToArray,
+   replaceItemToANewArray
+};
