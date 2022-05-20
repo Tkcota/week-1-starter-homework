@@ -175,7 +175,7 @@ const fizzbuzz = (num) => {
   //   }
   // }
   //}
-  //for (num = 0; num <= 100; num++) {
+  // for (num = 0; num <= 100; num++) {
   if (num % 3 == 0 && num % 5 == 0) {
     return ("fizzbuzz")
   } else if (num % 3 == 0) {
@@ -186,7 +186,7 @@ const fizzbuzz = (num) => {
     return (num)
   }
 }
-//}
+
 
 //correct answer above
 
