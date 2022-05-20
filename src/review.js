@@ -3,7 +3,7 @@
 // in JS three ways to declare a variable 1. var(old), 2. let (new), 3. const
 
 var x = 1;// works but outdated
-let y = 1; //preffered (bit more strict)
+let c = 1; //preffered (bit more strict)
 
 
 // convention to upcase constants that dont change;
@@ -107,8 +107,88 @@ if ({}) {
 
 
 
+const myFilter = (arr, func) => {
+  let itemsToKeep = []
+  arr.forEach((currentItem) => {
+    // how do i know if I want to keep the thing
+    // when i don't even know what the thing is.
+    // ok if you(the person using myFilter) give me
+    // a function that return true when give the thing then
+    // i can make
+    if (func(currentItem)) {
+      itemsToKeep.push(currentItem)
+    }
+  })
+  return itemsToKeep
+
+}
+
+let x = myFilter([1, 2, 3, 4, 5], (num) => {
+  return num % 2 === 0
+})
+let y = myFilter([{ name: 'tony', age: 21 }, { name: 'bob', age: 12 }], (person) => person.age >= 21)
+console.log(x)
+console.log(y)
 
 
+const myForEachLoop = (arr, func) => {
+  for (let i = 0; i < arr.length; i++) {
+    func(arr[i])
+  }
+}
+
+let yo = myForEachLoop([1, 2, 3, 4, 5], (thing) => { console.log(thing) })
+console.log(yo)
+
+// goes in the array calls function and what that function is pushed into 
+// in a new array. and at the that array is returned
+const myMap = (arr, func) => {
+  let itemsToReturn = []
+  for (let i = 0; i < arr.length; i++) {
+    // create a new thing with the function they give me
+    let newThing = func(arr[i])
+    itemsToReturn.push(newThing)
+  }
+  return itemsToReturn
+}
+
+let yo1 = myMap([1, 2, 3, 4, 5], (thing) => thing * 2)
+console.log(yo1) //
+
+
+
+let nums = [1, 2, 3, 4]
+
+// some random task with reduce
+let total = nums.reduce((accum, currentItem) => {
+  console.log('accum:', accum)
+  console.log('currentItem:', currentItem)
+  console.log('currentItem: + accum:', currentItem + accum)
+
+  // what this function returns becomes the next accum
+  return accum + currentItem
+}, 0)
+
+console.log(total)
+
+// filter with reduce
+let evens = nums.reduce((accum, currentItem) => {
+  if (currentItem % 2 === 0) {
+    accum.push(currentItem)
+  }
+  console.log('accum:', accum)
+  return accum
+}, [])
+
+console.log(evens)
+
+
+// map with reduce
+let html = nums.reduce((accum, currentItem) => {
+  accum.push(`<p>${currentItem}</p>`)
+  return accum
+}, [])
+console.log(html)
 
 
 

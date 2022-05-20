@@ -99,12 +99,63 @@ let isMale = characters.filter((people) => {
 
 })
 let isFemale = characters.filter((people) => {
+
   return people.gender == 'female';
 
 
 
 })
-console.log(isFemale);
+
+//console.log(isFemale);
+
+let sortByName = characters.sort(function (a, b) {
+  return a.name - b.name;
+});
+// console.log(sortByName);
+
+
+let sortMass = characters.sort(function (a, b) {
+  return a.mass - b.mass;
+})
+// console.log(sortMass);
+
+let sortHeight = characters.sort(function (a, b) {
+  return a.height - b.height;
+
+})
+
+let sortGender = characters.sort(function (a, b) {
+  return a.gender - b.gender;
+})
+// console.log(sortGender);
+
+let blueEyes = characters.every((eye_color) => {
+  return eye_color == 'blue';
+});
+
+let massMore40 = characters.every((mass) => {
+  return mass > '40';
+})
+
+let tallerThan200 = characters.every((height) => {
+  return height > 200;
+})
+
+letGender = characters.every((gender) => {
+  return gender == 'male';
+})
+// console.log(letGender);
+let checkForMales = characters.some(characters => characters.gender == 'male');
+
+let blueEyes2 = characters.some(characters => characters.eye_color == 'blue')
+
+let tall200 = characters.some(characters => characters.height > 200)
+//console.log(tall200);
+let less50 = characters.some(characters => characters.mass < 50);
+console.log(less50)
+
+
+//console.log(checkForMales);
 
 
 
