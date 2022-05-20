@@ -5,6 +5,7 @@ const characters = [
     mass: '77',
     eye_color: 'blue',
     gender: 'male',
+    shoe_size: '20'
   },
   {
     name: 'Darth Vader',
@@ -12,6 +13,7 @@ const characters = [
     mass: '136',
     eye_color: 'yellow',
     gender: 'male',
+    shoe_size: '50'
   },
   {
     name: 'Leia Organa',
@@ -19,6 +21,7 @@ const characters = [
     mass: '49',
     eye_color: 'brown',
     gender: 'female',
+    shoe_size: '20'
   },
   {
     name: 'Anakin Skywalker',
@@ -26,13 +29,20 @@ const characters = [
     mass: '84',
     eye_color: 'blue',
     gender: 'male',
+    shoe_size: '2'
   },
 ];
 
 let myListOfNames = characters.map(user => {
   return user.name;
-}
-)
+})
+
+let allShoeSizes = characters.map(x => {
+  return x.shoe_size;
+})
+console.log(allShoeSizes);
+
+
 let MyListOfHeights = characters.map(user => {
   return user.height
 })
@@ -152,7 +162,7 @@ let blueEyes2 = characters.some(characters => characters.eye_color == 'blue')
 let tall200 = characters.some(characters => characters.height > 200)
 //console.log(tall200);
 let less50 = characters.some(characters => characters.mass < 50);
-console.log(less50)
+// console.log(less50)
 
 
 //console.log(checkForMales);
@@ -172,21 +182,36 @@ console.log(less50)
 
 
 
+let myOwnLessThan100Mass = characters.filter((x) => {
+  return x.mass < 100
+})
+// console.log(myOwnLessThan100Mass)
 
+// let getShoeSum = characters.reduce((accum, currentValue) => {
+//   accum = + parseInt(currentValue.shoe_size);
+// }, 0)
+// console.log(getShoeSum);
 
+let getShoeSum1 = characters.reduce((accum, currentValue) => {
+  sum = accum + parseInt(currentValue.shoe_size)
+  return sum;
+}, 0)
+// console.log(getShoeSum1);
 // MAP
 // Get an array of all names
 // Get an array of all heights
 // Get an array of objects with just name and height properties
 // Get an array of all first names
 // REDUCE OR FOREACH
-// Get the total mass of all characters
+// My own question get the total number shoe size sum of all characters
+// Get the total mass of all characters 
 // Get the total height of all characters
 // Get the total number of characters in all the character names
 // Get the total number of characters by eye color(hint.a map of eye color to count)
 // FILTER
 // Get characters with mass greater than 100
 // Get characters with height less than 200
+// My own practice- get characters with mass less than 100
 // Get all male characters
 // Get all female characters
 // SORT
