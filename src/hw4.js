@@ -40,7 +40,7 @@ let myListOfNames = characters.map(user => {
 let allShoeSizes = characters.map(x => {
   return x.shoe_size;
 })
-console.log(allShoeSizes);
+// console.log(allShoeSizes);
 
 
 let MyListOfHeights = characters.map(user => {
@@ -118,7 +118,7 @@ let isFemale = characters.filter((people) => {
 
 //console.log(isFemale);
 
-let sortByName = characters.sort(function (a, b) {
+let sortByName = characters.sort((a, b) => {
   return a.name - b.name;
 });
 // console.log(sortByName);
@@ -127,7 +127,7 @@ let sortByName = characters.sort(function (a, b) {
 let sortMass = characters.sort(function (a, b) {
   return a.mass - b.mass;
 })
-// console.log(sortMass);
+console.log(sortMass);
 
 let sortHeight = characters.sort(function (a, b) {
   return a.height - b.height;

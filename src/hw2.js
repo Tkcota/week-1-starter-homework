@@ -18,6 +18,7 @@ const addItemToArray = (arr, item, index) => {
 
 }
 //TODO
+console.log(addItemToArray);
 
 
 
@@ -38,6 +39,7 @@ const addItemToANewArray = (arr, item, index) => {
 
    //TODO
 }
+// console.log(addItemToANewArray);
 
 /**
  * replace item to the array passed at given index
